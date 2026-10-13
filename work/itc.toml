@@ -1,0 +1,22 @@
+[main]
+file_path = "extracted/default.xex"
+out_directory_path = "out"
+switch_table_file_path = "jump_tables.toml"
+
+# Register save/restore helpers, located by byte signature in the parsed image (see find_thunks.py).
+savegprlr_14_address = 0x825A6E50
+restgprlr_14_address = 0x825A6EA0
+savefpr_14_address = 0x825A78E0
+restfpr_14_address = 0x825A792C
+savevmx_14_address = 0x825A7980
+restvmx_14_address = 0x825A7C18
+savevmx_64_address = 0x825A7A14
+restvmx_64_address = 0x825A7CAC
+
+# ---- Host hooks (implemented in runtime/src/hooks.cpp) -------------------------------------------------
+# Offline game: neutralize the network/Live subsystem (it is never initialized without sockets).
+[[midasm_hook]]
+name = "HookReturn0"
+address = 0x8214FA78
+registers = ["r3"]
+return = true

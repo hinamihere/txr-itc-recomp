@@ -1,0 +1,6 @@
+# Line endings: stored as LF; Windows scripts are checked out with CRLF, shell scripts and patches always LF.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+*.patch -text
+*.thumb binary

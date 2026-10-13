@@ -1,0 +1,58 @@
+# Local history of the TXR:ITC PC port. Tracked: hand-written code, configs, scripts, notes. NOT tracked: game data, anything generated
+# or downloaded, build output, caches, logs and dumps (see AGENTS.md for how to regenerate each of them).
+
+# --- Third-party code and tools (own git clones / downloads; local XenonRecomp changes are kept as patches/xenonrecomp-local.patch) ---
+/tools/
+/reference/
+/work/deps/
+/work/ffmpeg/
+
+# --- Game data (never commit: it comes from the user's own ISO) ---
+/recomp/
+/work/extracted/
+/work/image.bin
+*.xex
+*.iso
+*.xwb
+*.xsb
+*.xma2
+
+# --- Generated code and build output ---
+/work/out/
+/work/rt_build/
+/work/bin/
+/build/
+/runtime/
+/src/
+*.exe
+*.dll
+*.obj
+*.o
+*.a
+__pycache__/
+
+# --- Caches (rebuilt on demand) ---
+/work/shader_cache*/
+/work/shaders/
+*.spv
+vk_pipeline_cache.bin*
+
+# --- Test output: logs, dumps, captures ---
+/work/dumps/
+/work/rdoc/
+*.err
+*.out
+*.log
+*.wav
+*.png
+*.rdc
+*.sym
+*.black.txt
+*.pkt.txt
+/work/dll_nm.txt
+/work/w1sum.txt
+
+# --- Backups made before scripted rewrites ---
+*.bak*
+*.stale_*
+*.tmp
