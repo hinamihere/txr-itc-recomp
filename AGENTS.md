@@ -118,6 +118,7 @@ cd /c/itc-work && ./build.sh          # host DLL (+ exe only if generated code c
 - Match the surrounding code: long explanatory comments on *why*, compact C++, env-var switches for experiments (`ITC_*`), logs with a `[tag]` prefix.
 - Keep D3D11 working while changing shared code (`xgpu_shared.inl`, `xgpu_shader.cpp`); test both backends.
 - Record non-obvious findings in `work/NOTES.md` (append a dated section) so the next agent does not re-investigate them.
-- Version control: a **local git repository at the project root** (no remote; do not push anywhere without the user's OK). It tracks code, configs,
+- Version control: a **git repository at the project root**, remote `origin` = the **public** GitHub repo https://github.com/hinamihere/txr-itc-recomp
+  (branch `master`). Push only when the user asks; never commit game data (anything is public once pushed). It tracks code, configs,
   scripts and notes only; `.gitignore` keeps out game data, generated code (`work/out/`), builds, caches, dumps and logs. Commit finished, working steps
   with a clear message (what changed and why). Local changes to XenonRecomp live in `patches/xenonrecomp-local.patch` (see `patches/README.md`).
